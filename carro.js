@@ -1,9 +1,9 @@
 // código do carro
-let xCarros = [600, 600, 600];
-let yCarros = [40, 96, 150];
-let comprimentoCarros = [50, 50, 50];
-let alturaCarros = [40, 40, 40];
-let velocidadeCarros = [2.5, 3, 3.5];
+let xCarros = [600, 600, 600, 600,600,600];
+let yCarros = [40, 96, 150, 210, 270, 318];
+let comprimentoCarros = [50, 50, 50, 50, 50, 50];
+let alturaCarros = [40, 40, 40, 40, 40, 40];
+let velocidadeCarros = [2.5, 3, 3.5, 5, 3.3, 2.3];
 
 
 function mostraCarro(){
