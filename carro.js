@@ -1,29 +1,34 @@
 // código do carro
-let xCarro1 = 600;
-let xCarro2 = 600;
-let xCarro3 = 600;
-
-let yCarro1 = 40;
-let yCarro2 = 100;
-let yCarro3 = 150;
-
-let comprimentoCarro1 = 50;
-let comprimentoCarro2 = 50;
-let comprimentoCarro3 = 50;
-
-let alturaCarro1 = 40;
-let alturaCarro2 = 40;
-let alturaCarro3 = 40;
+let xCarros = [600, 600, 600];
+let yCarros = [40, 96, 150];
+let comprimentoCarros = [50, 50, 50];
+let alturaCarros = [40, 40, 40];
+let velocidadeCarros = [2.5, 3, 3.5];
 
 
 function mostraCarro(){
-  image(imagemCarro1, xCarro1, yCarro1, comprimentoCarro1, alturaCarro1);
-  image(imagemCarro2, xCarro2, yCarro2, comprimentoCarro1, alturaCarro2);
-  image(imagemCarro3, xCarro3, yCarro3, comprimentoCarro1, alturaCarro2);
+  image(imagemCarro1, xCarros[0], yCarros[0], comprimentoCarros[0], alturaCarros[0]);
+  image(imagemCarro2, xCarros[1], yCarros[1], comprimentoCarros[1], alturaCarros[1]);
+  image(imagemCarro3, xCarros[2], yCarros[2], comprimentoCarros[2], alturaCarros[2]);
 }
 
 function movimentaCarro() {
-  xCarro1 -= 2;
-  xCarro2 -= 3;
-  xCarro3 -= 4;
+  xCarros[0] -= velocidadeCarros[0];
+  xCarros[1] -= velocidadeCarros[1];
+  xCarros[2] -= velocidadeCarros[2];  
+}
+
+function voltaPosiciaInicialDoCarro(){
+  if(xCarros[0] < -50){
+    xCarros[0] = 600;
+  }
+  
+  if(xCarros[1] < -50){
+    xCarros[1] = 600;
+  }
+  
+  if(xCarros[2] < -50){
+    xCarros[2] = 600;
+  }
+  
 }
