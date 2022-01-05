@@ -1,9 +1,10 @@
 // código do ator
-let xAtor1 = 100;
+let xAtor1 = 96;
 let yAtor1 = 366;
 let comprimentoAtor1 = 30;
 let alturaAtor1 = 30;
 let colisao = false;
+let meusPontos = 0;
 
 function mostraAtor(){
     image(imagemDoAtor1, xAtor1, yAtor1, comprimentoAtor1, alturaAtor1);
@@ -32,3 +33,10 @@ function movimentaAtor1(){
   function colidiu() {
       yAtor1 = 366;
   }
+
+  function incluiPontos(){
+    textAlign(CENTER);
+    textSize(25);
+    fill(color(255, 240, 60))
+    text(meusPontos, width / 5, 27);
+}

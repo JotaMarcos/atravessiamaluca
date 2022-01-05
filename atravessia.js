@@ -9,4 +9,5 @@ function setup() {
     movimentaCarro();
     movimentaAtor1();
     verificaColisao();
+    incluiPontos()
   }
