@@ -17,7 +17,9 @@ function movimentaAtor1(){
     }
     
     if(keyIsDown(DOWN_ARROW)){
-      yAtor1 += 3;   
+      if(podeSeMover()){
+        yAtor1 += 3; 
+      }  
     }
   }
 
@@ -25,12 +27,16 @@ function movimentaAtor1(){
     for(let i = 0; i < imagemCarros.length; i++){
         colisao = collideRectCircle(xCarros[i], yCarros[i], comprimentoCarros[i], alturaCarros[i], xAtor1, yAtor1, 15);
         if(colisao){
-            colidiu();
+          voltaAtorParaPosicaoInicial();
+          somDaColisao.play();
+          if(pontosMaiorQueZero()){
+            meusPontos -= 1;
+          }
         }
     }
   }
 
-  function colidiu() {
+  function voltaAtorParaPosicaoInicial() {
       yAtor1 = 366;
   }
 
@@ -39,4 +45,18 @@ function movimentaAtor1(){
     textSize(25);
     fill(color(255, 240, 60))
     text(meusPontos, width / 5, 27);
+}
+
+function marcaPonto(){
+  if(yAtor1 < 15){
+    meusPontos += 1;
+    voltaAtorParaPosicaoInicial();
+  }
+}
+function pontosMaiorQueZero() {
+  return meusPontos > 0;
+}
+
+function podeSeMover(){
+  return yAtor1 < 366;
 }
